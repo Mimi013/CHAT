@@ -66,4 +66,5 @@ def chatbot():
 
 if __name__ == "__main__":
     # Modification du port pour utiliser celui défini par Render
-    app.run(debug=True, host='0.0.0.0', port=10000)
+    port = int(os.environ.get('PORT', 10000))  # Si la variable d'environnement PORT est absente, utiliser 5010 par défaut
+    app.run(debug=True, host='0.0.0.0', port=port)
